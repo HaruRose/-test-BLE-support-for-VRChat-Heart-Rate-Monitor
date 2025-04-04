@@ -1036,4 +1036,3 @@ namespace VRChatHeartRateMonitor
         private System.Windows.Forms.Label labelWebServerHtml;
     }
 }
-
