@@ -19,6 +19,7 @@ namespace VRChatHeartRateMonitor
 
         void StartScanning();
         void StopScanning();
+        void Disconnect();
         void SubscribeToDevice(ulong bluetoothDeviceAddress);
         void UnsubscribeFromDevice();
         ushort GetHeartRate();
