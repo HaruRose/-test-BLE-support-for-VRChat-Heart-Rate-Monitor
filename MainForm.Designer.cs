@@ -10,6 +10,7 @@ namespace VRChatHeartRateMonitor
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -65,20 +66,29 @@ namespace VRChatHeartRateMonitor
             this.panelWebServerHtml = new System.Windows.Forms.Panel();
             this.textBoxWebServerHtml = new System.Windows.Forms.TextBox();
             this.labelWebServerHtml = new System.Windows.Forms.Label();
-            this.checkBoxSwitchBLE = new System.Windows.Forms.CheckBox(); // Initialize the new CheckBox
+
+
+
+
+            this.checkBoxSwitchBLE = new System.Windows.Forms.CheckBox(); // Initialize the CheckBox
+
+            // Other existing initialization code...
 
             // 
             // checkBoxSwitchBLE
             // 
-            this.checkBoxSwitchBLE = new System.Windows.Forms.CheckBox(); // Initialize the new CheckBox
-
-            this.checkBoxSwitchBLE.Location = new System.Drawing.Point(200, 20); // Adjust the location as needed
+            this.checkBoxSwitchBLE.Location = new System.Drawing.Point(10, 200); // Adjust the location as needed
             this.checkBoxSwitchBLE.Name = "checkBoxSwitchBLE";
             this.checkBoxSwitchBLE.Size = new System.Drawing.Size(150, 30); // Adjust the size as needed
             this.checkBoxSwitchBLE.Text = "Use BLE";
             this.checkBoxSwitchBLE.Appearance = System.Windows.Forms.Appearance.Normal;
             this.checkBoxSwitchBLE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.checkBoxSwitchBLE.Checked = false; // Default to BA mode
+
+            // Add the CheckBox to the "Main" tab
+            this.tabMain.Controls.Add(this.checkBoxSwitchBLE);
+
+           
 
             ///
             this.buttonSaveWebServerSettings = new System.Windows.Forms.Button();
@@ -171,9 +181,7 @@ namespace VRChatHeartRateMonitor
             this.tabMain.Text = "Main";
             // 
             ///
-            ///checkBoxSwitchBLE
-            ///
-            this.tabMain.Controls.Add(this.checkBoxSwitchBLE);
+           
             // 
             // 
             // labelDeviceInfo
