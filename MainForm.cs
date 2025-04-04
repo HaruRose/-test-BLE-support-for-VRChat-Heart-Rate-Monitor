@@ -316,7 +316,6 @@ namespace VRChatHeartRateMonitor
                 _deviceHandler = new DeviceHandler();
             }
 
-            // Common initialization for both handlers
             _deviceHandler.AdapterError += DeviceManager_AdapterError;
             _deviceHandler.DeviceFound += DeviceManager_DeviceFound;
             _deviceHandler.DeviceConnecting += DeviceManager_DeviceConnecting;
