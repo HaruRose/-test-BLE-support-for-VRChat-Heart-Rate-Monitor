@@ -9,7 +9,6 @@ namespace VRChatHeartRateMonitor
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Button buttonSwitchBLE;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -45,7 +44,7 @@ namespace VRChatHeartRateMonitor
             this.labelBatteryLevel = new System.Windows.Forms.Label();
             this.labelHeartRateDisplay = new System.Windows.Forms.Label();
             this.pictureBoxHeartRateDisplay = new System.Windows.Forms.PictureBox();
-            this.buttonSwitchBLE = new System.Windows.Forms.Button(); // Ensure the button is instantiated
+            this.buttonSwitchBLE = new System.Windows.Forms.Button(); // Keep this declaration
 
             this.tabVRChatSettings = new System.Windows.Forms.TabPage();
             this.panelAvatar = new System.Windows.Forms.Panel();
@@ -160,6 +159,14 @@ namespace VRChatHeartRateMonitor
             // 
             // buttonSwitchBLE
             // 
+            this.tabMain.Controls.Add(this.buttonSwitchBLE);
+            this.tabMain.Controls.Add(this.labelDeviceInfo);
+            this.tabMain.Controls.Add(this.comboBoxDevices);
+            this.tabMain.Controls.Add(this.buttonExecute);
+            this.tabMain.Controls.Add(this.labelDevice);
+            this.tabMain.Controls.Add(this.panelHeartRateDisplay);
+
+            // Set properties for buttonSwitchBLE
             this.buttonSwitchBLE.Location = new System.Drawing.Point(200, 20); // Adjust the location as needed
             this.buttonSwitchBLE.Size = new System.Drawing.Size(150, 30); // Adjust the size as needed
             this.buttonSwitchBLE.Text = "Switch to BLE";
