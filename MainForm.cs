@@ -78,20 +78,6 @@ namespace VRChatHeartRateMonitor
             else
                 action();
         }
-                public MainForm()
-        {
-            InitializeComponent();
-            InitializeFont();
-            InitializeConfig();
-            InitializeIcons();
-            InitializeForm();
-            InitializeUpdate();
-            InitializeHeartbeatEffect();
-            InitializeDeviceHandler();
-            InitializeVRChatOscHandler();
-            InitializeWebServerHandler();
-            InitializeDiscordHandler();
-
             // Initialize the new BLE switch button
             buttonSwitchBLE = new Button();
             buttonSwitchBLE.Location = new Point(200, 20); // Adjust the location as needed
