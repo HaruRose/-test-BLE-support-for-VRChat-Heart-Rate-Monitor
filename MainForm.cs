@@ -56,9 +56,16 @@ namespace VRChatHeartRateMonitor
             InitializeWebServerHandler();
             InitializeDiscordHandler();
 
-            // Initialize the appropriate device handler
-            _deviceHandler = new DeviceHandler(); // or new BleHandler();
-
+            if (checkBoxSwitchBLE.Checked)
+            {
+                // Initialize BLE (GATT) handler
+                _deviceHandler = (IDeviceHandler)new BleHandler();
+            }
+            else
+            {
+                // Initialize Bluetooth Adapter (BA) handler
+                _deviceHandler = (IDeviceHandler)new DeviceHandler();
+            }
             InitializeDeviceHandler();
             InitializeVRChatOscHandler();
             InitializeWebServerHandler();
@@ -76,6 +83,7 @@ namespace VRChatHeartRateMonitor
             };
             checkBoxSwitchBLE.CheckedChanged += new EventHandler(checkBoxSwitchBLE_CheckedChanged);
             this.Controls.Add(checkBoxSwitchBLE);
+
 
             // Initialize BleHandler
             bleHandler = new BleHandler();
@@ -98,10 +106,6 @@ namespace VRChatHeartRateMonitor
             else
                 action();
         }
-        private void buttonSwitchBLE_Click(object sender, EventArgs e)
-        {
-            SwitchToBLEFunction();
-        }
 
         private void SwitchToBLEFunction()
         {
@@ -112,7 +116,7 @@ namespace VRChatHeartRateMonitor
 
         private void StartBLEHandlers()
         {
-            _deviceHandler.StartBLE();
+            bleHandler.StartBLE();
         }
 
         private void OnHeartRateUpdated(ushort heartRate)
@@ -313,7 +317,7 @@ namespace VRChatHeartRateMonitor
             if (checkBoxSwitchBLE.Checked)
             {
                 // Initialize BLE (GATT) handler
-                _deviceHandler = new BleHandler();
+                _deviceHandler = bleHandler;
             }
             else
             {
