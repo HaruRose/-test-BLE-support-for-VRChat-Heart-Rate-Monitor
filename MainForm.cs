@@ -57,21 +57,41 @@ namespace VRChatHeartRateMonitor
             InitializeWebServerHandler();
             InitializeDiscordHandler();
 
-            // Initialize the new BLE switch button
-            buttonSwitchBLE = new Button
+            // Initialize the new BLE switch checkbox
+            checkBoxSwitchBLE = new CheckBox
             {
                 Location = new Point(200, 20), // Adjust the location as needed
                 Size = new Size(150, 30), // Adjust the size as needed
-                Text = "Switch to BLE"
+                Text = "Use BLE",
+                Appearance = Appearance.Normal,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Checked = false // Default to BA mode
             };
-            buttonSwitchBLE.Click += new EventHandler(buttonSwitchBLE_Click);
-            this.Controls.Add(buttonSwitchBLE);
-
-            // Initialize BleHandler
-            bleHandler = new BleHandler();
+            checkBoxSwitchBLE.CheckedChanged += new EventHandler(checkBoxSwitchBLE_CheckedChanged);
+            this.Controls.Add(checkBoxSwitchBLE);
+                     
+        // Initialize BleHandler
+        bleHandler = new BleHandler();
             bleHandler.HeartRateUpdated += OnHeartRateUpdated;
         }
 
+        private void checkBoxSwitchBLE_CheckedChanged(object sender, EventArgs e)
+        {
+            // Re-initialize the device handler based on the selected mode
+            InitializeDeviceHandler();
+        }
+        private CheckBox checkBoxSwitchBLE;
+        private void SafeInvoke(Action action)
+        {
+            if (InvokeRequired)
+                try
+                {
+                    Invoke(action);
+                }
+                catch (ObjectDisposedException) { }
+            else
+                action();
+        }
         private void buttonSwitchBLE_Click(object sender, EventArgs e)
         {
             if (isScanning)
@@ -103,7 +123,7 @@ namespace VRChatHeartRateMonitor
             base.OnFormClosing(e);
         }
 
-    private void InitializeFont()
+        private void InitializeFont()
         {
             int fontLength = Properties.Resources.CascadiaMono.Length;
 
@@ -285,7 +305,17 @@ namespace VRChatHeartRateMonitor
 
         private void InitializeDeviceHandler()
         {
-            _deviceHandler = new DeviceHandler();
+            if (checkBoxSwitchBLE.Checked)
+            {
+                // Initialize BLE (GATT) handler
+                _deviceHandler = new BleHandler();
+            }
+            else
+            {
+                // Initialize Bluetooth Adapter (BA) handler
+                _deviceHandler = new DeviceHandler();
+            }
+
             _deviceHandler.AdapterError += DeviceManager_AdapterError;
             _deviceHandler.DeviceFound += DeviceManager_DeviceFound;
             _deviceHandler.DeviceConnecting += DeviceManager_DeviceConnecting;
@@ -296,6 +326,7 @@ namespace VRChatHeartRateMonitor
             _deviceHandler.HeartRateUpdated += DeviceManager_HeartRateUpdated;
             _deviceHandler.BatteryLevelUpdated += DeviceManager_BatteryLevelUpdated;
 
+            comboBoxDevices.Items.Clear();
             comboBoxDevices.Items.Add("Scanning for Bluetooth Devices...");
             comboBoxDevices.SelectedIndex = 0;
 
@@ -343,6 +374,7 @@ namespace VRChatHeartRateMonitor
                 RegistryHelper.SetValue("last_connected_device_address", _lastConnectedDeviceAddress);
             });
         }
+
 
         private void DeviceManager_DeviceDisconnecting()
         {
@@ -419,7 +451,7 @@ namespace VRChatHeartRateMonitor
                     comboBoxDevices.DroppedDown = false;
                     comboBoxDevices.DroppedDown = true;
                 }
-                
+
                 if (_lastConnectedDeviceAddress == _deviceHandler.BluetoothAddressToString(bluetoothDeviceAddress))
                 {
                     comboBoxDevices.SelectedIndex = comboBoxDevices.Items.Count - 1;
@@ -471,7 +503,7 @@ namespace VRChatHeartRateMonitor
             if (_useWebServer)
                 _webServerHandler.Stop();
 
-            if(_useDiscord)
+            if (_useDiscord)
                 _discordHandler.Stop();
         }
 
@@ -513,7 +545,7 @@ namespace VRChatHeartRateMonitor
             {
                 _deviceHandler.UnsubscribeFromDevice();
             }
-            else if(_deviceHandler.CanConnect())
+            else if (_deviceHandler.CanConnect())
             {
                 ulong? selectedBluetoothDeviceAddress = _deviceMap.FirstOrDefault(d => d.Value == comboBoxDevices.SelectedItem.ToString()).Key;
 
