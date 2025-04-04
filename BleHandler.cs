@@ -5,6 +5,7 @@ using Windows.Devices.Bluetooth;
 using Windows.Devices.Bluetooth.Advertisement;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Storage.Streams;
+using VRChatHeartRateMonitor;
 
 namespace VRChatHeartRateMonitor
 {
@@ -48,6 +49,39 @@ namespace VRChatHeartRateMonitor
         {
             Debug.WriteLine("Stopping BLE scan...");
             bleWatcher.Stop();
+        }
+
+        public void SubscribeToDevice(ulong bluetoothDeviceAddress)
+        {
+            // Implement this method based on your requirements.
+        }
+
+        public void UnsubscribeFromDevice()
+        {
+            // Implement this method based on your requirements.
+        }
+
+        public ushort GetHeartRate()
+        {
+            // Implement this method based on your requirements.
+            return 0;
+        }
+
+        public bool IsListening()
+        {
+            // Implement this method based on your requirements.
+            return false;
+        }
+
+        public bool CanConnect()
+        {
+            // Implement this method based on your requirements.
+            return true;
+        }
+
+        public string BluetoothAddressToString(ulong bluetoothDeviceAddress)
+        {
+            return bluetoothDeviceAddress.ToString("X");
         }
 
         private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher sender, BluetoothLEAdvertisementReceivedEventArgs args)
@@ -167,39 +201,6 @@ namespace VRChatHeartRateMonitor
             connectedDevice = null;
 
             Debug.WriteLine("Disconnected from BLE device.");
-        }
-
-        public void SubscribeToDevice(ulong bluetoothDeviceAddress)
-        {
-            // Implement this method based on your requirements.
-        }
-
-        public void UnsubscribeFromDevice()
-        {
-            // Implement this method based on your requirements.
-        }
-
-        public ushort GetHeartRate()
-        {
-            // Implement this method based on your requirements.
-            return 0;
-        }
-
-        public bool IsListening()
-        {
-            // Implement this method based on your requirements.
-            return false;
-        }
-
-        public bool CanConnect()
-        {
-            // Implement this method based on your requirements.
-            return true;
-        }
-
-        public string BluetoothAddressToString(ulong bluetoothDeviceAddress)
-        {
-            return bluetoothDeviceAddress.ToString("X");
         }
     }
 }
