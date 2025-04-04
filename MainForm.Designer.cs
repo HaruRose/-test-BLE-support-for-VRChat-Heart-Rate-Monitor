@@ -1,324 +1,322 @@
-namespace VRChatHeartRateMonitor
+partial class MainForm
 {
-    partial class MainForm
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.IContainer components = null;
+    private System.Windows.Forms.Button buttonSwitchBLE;
+
+    /// <summary>
+    /// Clean up any resources being used.
+    /// </summary>
+    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+    protected override void Dispose(bool disposing)
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Button buttonSwitchBLE;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        if (disposing && (components != null))
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+            components.Dispose();
         }
+        base.Dispose(disposing);
+    }
 
-        #region Windows Form Designer generated code
+    #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tabs = new System.Windows.Forms.TabControl();
-            this.tabMain = new System.Windows.Forms.TabPage();
-            this.labelDeviceInfo = new System.Windows.Forms.Label();
-            this.comboBoxDevices = new System.Windows.Forms.ComboBox();
-            this.buttonExecute = new System.Windows.Forms.Button();
-            this.labelDevice = new System.Windows.Forms.Label();
-            this.panelHeartRateDisplay = new System.Windows.Forms.Panel();
-            this.labelBatteryLevel = new System.Windows.Forms.Label();
-            this.labelHeartRateDisplay = new System.Windows.Forms.Label();
-            this.pictureBoxHeartRateDisplay = new System.Windows.Forms.PictureBox();
-            this.tabVRChatSettings = new System.Windows.Forms.TabPage();
-            this.panelAvatar = new System.Windows.Forms.Panel();
-            this.buttonAvatarParameterInfo = new System.Windows.Forms.Button();
-            this.textBoxAvatarParameter = new System.Windows.Forms.TextBox();
-            this.labelAvatarParameter = new System.Windows.Forms.Label();
-            this.checkBoxUseAvatar = new System.Windows.Forms.CheckBox();
-            this.panelChatbox = new System.Windows.Forms.Panel();
-            this.comboBoxChatboxAppearance = new System.Windows.Forms.ComboBox();
-            this.labelChatboxAppearance = new System.Windows.Forms.Label();
-            this.buttonSaveVRChatSettings = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxUseChatbox = new System.Windows.Forms.CheckBox();
-            this.panelOsc = new System.Windows.Forms.Panel();
-            this.buttonOscAddressInfo = new System.Windows.Forms.Button();
-            this.textBoxOscAddress = new System.Windows.Forms.TextBox();
-            this.labelOscInfo = new System.Windows.Forms.Label();
-            this.labelOsc = new System.Windows.Forms.Label();
-            this.tabWebServerSettings = new System.Windows.Forms.TabPage();
-            this.buttonSaveWebServerSettings = new System.Windows.Forms.Button();
-            this.panelWebServer = new System.Windows.Forms.Panel();
-            this.buttonWebServerPortInfo = new System.Windows.Forms.Button();
-            this.textBoxWebServerPort = new System.Windows.Forms.TextBox();
-            this.labelWebServerPort = new System.Windows.Forms.Label();
-            this.checkBoxUseWebServer = new System.Windows.Forms.CheckBox();
-            this.tabDiscordSettings = new System.Windows.Forms.TabPage();
-            this.buttonSaveDiscordSettings = new System.Windows.Forms.Button();
-            this.labelDiscordInfo = new System.Windows.Forms.Label();
-            this.panelDiscordStateText = new System.Windows.Forms.Panel();
-            this.textBoxDiscordStateText = new System.Windows.Forms.TextBox();
-            this.labelDiscordStateText = new System.Windows.Forms.Label();
-            this.panelDiscordIdleText = new System.Windows.Forms.Panel();
-            this.textBoxDiscordIdleText = new System.Windows.Forms.TextBox();
-            this.labelDiscordIdleText = new System.Windows.Forms.Label();
-            this.panelDiscordActiveText = new System.Windows.Forms.Panel();
-            this.textBoxDiscordActiveText = new System.Windows.Forms.TextBox();
-            this.labelDiscordActiveText = new System.Windows.Forms.Label();
-            this.checkBoxUseDiscord = new System.Windows.Forms.CheckBox();
-            this.tabInfo = new System.Windows.Forms.TabPage();
-            this.panelInfoBottom = new System.Windows.Forms.Panel();
-            this.linkLabelInfoProjectUrl = new System.Windows.Forms.LinkLabel();
-            this.linkLabelInfoAuthorUrl = new System.Windows.Forms.LinkLabel();
-            this.labelInfoAuthorName = new System.Windows.Forms.Label();
-            this.labelInfoAppName = new System.Windows.Forms.Label();
-            this.panelInfoTop = new System.Windows.Forms.Panel();
-            this.pictureBoxInfoAuthor = new System.Windows.Forms.PictureBox();
-            this.panelFooter = new System.Windows.Forms.Panel();
-            this.pictureBoxFooterDiscord = new System.Windows.Forms.PictureBox();
-            this.linkLabelFooterWebsite = new System.Windows.Forms.LinkLabel();
-            this.labelWebServerHtml = new System.Windows.Forms.Label();
-            this.panelWebServerHtml = new System.Windows.Forms.Panel();
-            this.textBoxWebServerHtml = new System.Windows.Forms.TextBox();
-            this.tabs.SuspendLayout();
-            this.tabMain.SuspendLayout();
-            this.panelHeartRateDisplay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeartRateDisplay)).BeginInit();
-            this.tabVRChatSettings.SuspendLayout();
-            this.panelAvatar.SuspendLayout();
-            this.panelChatbox.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panelOsc.SuspendLayout();
-            this.tabWebServerSettings.SuspendLayout();
-            this.panelWebServer.SuspendLayout();
-            this.tabDiscordSettings.SuspendLayout();
-            this.panelDiscordStateText.SuspendLayout();
-            this.panelDiscordIdleText.SuspendLayout();
-            this.panelDiscordActiveText.SuspendLayout();
-            this.tabInfo.SuspendLayout();
-            this.panelInfoBottom.SuspendLayout();
-            this.panelInfoTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfoAuthor)).BeginInit();
-            this.panelFooter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFooterDiscord)).BeginInit();
-            this.panelWebServerHtml.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // notifyIcon
-            // 
-            this.notifyIcon.Visible = true;
-            // 
-            // tabs
-            // 
-            this.tabs.Controls.Add(this.tabMain);
-            this.tabs.Controls.Add(this.tabVRChatSettings);
-            this.tabs.Controls.Add(this.tabWebServerSettings);
-            this.tabs.Controls.Add(this.tabDiscordSettings);
-            this.tabs.Controls.Add(this.tabInfo);
-            this.tabs.Location = new System.Drawing.Point(2, 0);
-            this.tabs.Margin = new System.Windows.Forms.Padding(0);
-            this.tabs.Name = "tabs";
-            this.tabs.SelectedIndex = 0;
-            this.tabs.ShowToolTips = true;
-            this.tabs.Size = new System.Drawing.Size(532, 304);
-            this.tabs.TabIndex = 0;
-            // 
-            // tabMain
-            // 
-            this.tabMain.BackColor = System.Drawing.Color.White;
-            this.tabMain.Controls.Add(this.labelDeviceInfo);
-            this.tabMain.Controls.Add(this.comboBoxDevices);
-            this.tabMain.Controls.Add(this.buttonExecute);
-            this.tabMain.Controls.Add(this.labelDevice);
-            this.tabMain.Controls.Add(this.panelHeartRateDisplay);
-            this.tabMain.Controls.Add(this.buttonSwitchBLE); // Add the button to the tabMain controls.
-            this.tabMain.Location = new System.Drawing.Point(4, 22);
-            this.tabMain.Margin = new System.Windows.Forms.Padding(1);
-            this.tabMain.Name = "tabMain";
-            this.tabMain.Padding = new System.Windows.Forms.Padding(1, 1, 2, 30);
-            this.tabMain.Size = new System.Drawing.Size(524, 278);
-            this.tabMain.TabIndex = 0;
-            this.tabMain.Text = "Main";
-            // 
-            // buttonSwitchBLE
-            // 
-            this.buttonSwitchBLE.Location = new System.Drawing.Point(200, 20); // Adjust the location as needed
-            this.buttonSwitchBLE.Size = new System.Drawing.Size(150, 30); // Adjust the size as needed
-            this.buttonSwitchBLE.Text = "Switch to BLE";
-            this.buttonSwitchBLE.UseVisualStyleBackColor = true;
-            this.buttonSwitchBLE.Click += new System.EventHandler(this.buttonSwitchBLE_Click);
-            // 
-            // labelDeviceInfo
-            // 
-            this.labelDeviceInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDeviceInfo.Font = new System.Drawing.Font("Cascadia Mono", 8F);
-            this.labelDeviceInfo.Location = new System.Drawing.Point(1, 173);
-            this.labelDeviceInfo.Margin = new System.Windows.Forms.Padding(0);
-            this.labelDeviceInfo.Name = "labelDeviceInfo";
-            this.labelDeviceInfo.Size = new System.Drawing.Size(521, 20);
-            this.labelDeviceInfo.TabIndex = 4;
-            this.labelDeviceInfo.Text = "(Selected device will be used as default next time the application launches)";
-            this.labelDeviceInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // comboBoxDevices
-            // 
-            this.comboBoxDevices.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBoxDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDevices.Font = new System.Drawing.Font("Cascadia Mono", 13F);
-            this.comboBoxDevices.FormattingEnabled = true;
-            this.comboBoxDevices.IntegralHeight = false;
-            this.comboBoxDevices.ItemHeight = 22;
-            this.comboBoxDevices.Location = new System.Drawing.Point(1, 143);
-            this.comboBoxDevices.Margin = new System.Windows.Forms.Padding(1);
-            this.comboBoxDevices.Name = "comboBoxDevices";
-            this.comboBoxDevices.Size = new System.Drawing.Size(521, 30);
-            this.comboBoxDevices.TabIndex = 0;
-            // 
-            // buttonExecute
-            // 
-            this.buttonExecute.AutoSize = true;
-            this.buttonExecute.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonExecute.Enabled = false;
-            this.buttonExecute.Font = new System.Drawing.Font("Cascadia Mono", 20F);
-            this.buttonExecute.Location = new System.Drawing.Point(1, 203);
-            this.buttonExecute.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonExecute.Name = "buttonExecute";
-            this.buttonExecute.Size = new System.Drawing.Size(521, 45);
-            this.buttonExecute.TabIndex = 5;
-            this.buttonExecute.Text = "START";
-            this.buttonExecute.UseVisualStyleBackColor = true;
-            this.buttonExecute.Click += new System.EventHandler(this.buttonExecute_Click);
-            // 
-            // labelDevice
-            // 
-            this.labelDevice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDevice.Font = new System.Drawing.Font("Cascadia Mono", 14F);
-            this.labelDevice.Location = new System.Drawing.Point(1, 113);
-            this.labelDevice.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.labelDevice.Name = "labelDevice";
-            this.labelDevice.Size = new System.Drawing.Size(521, 30);
-            this.labelDevice.TabIndex = 2;
-            this.labelDevice.Text = "Select device from the list below:";
-            // 
-            // panelHeartRateDisplay
-            // 
-            this.panelHeartRateDisplay.Controls.Add(this.labelBatteryLevel);
-            this.panelHeartRateDisplay.Controls.Add(this.labelHeartRateDisplay);
-            this.panelHeartRateDisplay.Controls.Add(this.pictureBoxHeartRateDisplay);
-            this.panelHeartRateDisplay.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeartRateDisplay.Location = new System.Drawing.Point(1, 1);
-            this.panelHeartRateDisplay.Margin = new System.Windows.Forms.Padding(0);
-            this.panelHeartRateDisplay.Name = "panelHeartRateDisplay";
-            this.panelHeartRateDisplay.Size = new System.Drawing.Size(521, 112);
-            this.panelHeartRateDisplay.TabIndex = 1;
-            // 
-            // labelBatteryLevel
-            // 
-            this.labelBatteryLevel.BackColor = System.Drawing.Color.Transparent;
-            this.labelBatteryLevel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelBatteryLevel.Font = new System.Drawing.Font("Cascadia Mono", 10F, System.Drawing.FontStyle.Bold);
-            this.labelBatteryLevel.ForeColor = System.Drawing.Color.White;
-            this.labelBatteryLevel.Location = new System.Drawing.Point(0, 0);
-            this.labelBatteryLevel.Name = "labelBatteryLevel";
-            this.labelBatteryLevel.Padding = new System.Windows.Forms.Padding(59, 0, 0, 70);
-            this.labelBatteryLevel.Size = new System.Drawing.Size(521, 112);
-            this.labelBatteryLevel.TabIndex = 6;
-            this.labelBatteryLevel.Text = "⚡100%";
-            this.labelBatteryLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelHeartRateDisplay
-            // 
-            this.labelHeartRateDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHeartRateDisplay.Font = new System.Drawing.Font("Cascadia Mono", 36F);
-            this.labelHeartRateDisplay.ForeColor = System.Drawing.Color.White;
-            this.labelHeartRateDisplay.Location = new System.Drawing.Point(0, 0);
-            this.labelHeartRateDisplay.Margin = new System.Windows.Forms.Padding(0);
-            this.labelHeartRateDisplay.Name = "labelHeartRateDisplay";
-            this.labelHeartRateDisplay.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.labelHeartRateDisplay.Size = new System.Drawing.Size(521, 112);
-            this.labelHeartRateDisplay.TabIndex = 8;
-            this.labelHeartRateDisplay.Text = "69";
-            this.labelHeartRateDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelHeartRateDisplay.Visible = false;
-            // 
-            // pictureBoxHeartRateDisplay
-            // 
-            this.pictureBoxHeartRateDisplay.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxHeartRateDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxHeartRateDisplay.Image = global::VRChatHeartRateMonitor.Properties.Resources.heart;
-            this.pictureBoxHeartRateDisplay.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxHeartRateDisplay.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBoxHeartRateDisplay.Name = "pictureBoxHeartRateDisplay";
-            this.pictureBoxHeartRateDisplay.Size = new System.Drawing.Size(521, 112);
-            this.pictureBoxHeartRateDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxHeartRateDisplay.TabIndex = 1;
-            this.pictureBoxHeartRateDisplay.TabStop = false;
-            // 
-            // tabVRChatSettings
-            // 
-            this.tabVRChatSettings.BackColor = System.Drawing.Color.White;
-            this.tabVRChatSettings.Controls.Add(this.panelAvatar);
-            this.tabVRChatSettings.Controls.Add(this.checkBoxUseAvatar);
-            this.tabVRChatSettings.Controls.Add(this.panelChatbox);
-            this.tabVRChatSettings.Controls.Add(this.buttonSaveVRChatSettings);
-            this.tabVRChatSettings.Controls.Add(this.panel1);
-            this.tabVRChatSettings.Controls.Add(this.panelOsc);
-            this.tabVRChatSettings.Controls.Add(this.labelOsc);
-            this.tabVRChatSettings.Location = new System.Drawing.Point(4, 22);
-            this.tabVRChatSettings.Margin = new System.Windows.Forms.Padding(1);
-            this.tabVRChatSettings.Name = "tabVRChatSettings";
-            this.tabVRChatSettings.Padding = new System.Windows.Forms.Padding(1, 1, 1, 30);
-            this.tabVRChatSettings.Size = new System.Drawing.Size(524, 278);
-            this.tabVRChatSettings.TabIndex = 1;
-            this.tabVRChatSettings.Text = "VRChat";
-            // 
-            // panelAvatar
-            // 
-            this.panelAvatar.Controls.Add(this.buttonAvatarParameterInfo);
-            this.panelAvatar.Controls.Add(this.textBoxAvatarParameter);
-            this.panelAvatar.Controls.Add(this.labelAvatarParameter);
-            this.panelAvatar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAvatar.Location = new System.Drawing.Point(1, 147);
-            this.panelAvatar.Name = "panelAvatar";
-            this.panelAvatar.Size = new System.Drawing.Size(522, 33);
-            this.panelAvatar.TabIndex = 8;
-            // 
-            // buttonAvatarParameterInfo
-            // 
-            this.buttonAvatarParameterInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAvatarParameterInfo.Font = new System.Drawing.Font("Cascadia Mono", 11F);
-            this.buttonAvatarParameterInfo.Location = new System.Drawing.Point(497, 0);
-            this.buttonAvatarParameterInfo.Name = "buttonAvatarParameterInfo";
-            this.buttonAvatarParameterInfo.Size = new System.Drawing.Size(23, 23);
-            this.buttonAvatarParameterInfo.TabIndex = 8;
-            this.buttonAvatarParameterInfo.Text = "?";
-            this.buttonAvatarParameterInfo.UseVisualStyleBackColor = true;
-            this.buttonAvatarParameterInfo.Click += new System.EventHandler(this.buttonAvatarParameterInfo_Click);
-            // 
-            // textBoxAvatarParameter
-            // 
-            this.textBoxAvatarParameter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxAvatarParameter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBoxAvatarParameter.Font = new System.Drawing.Font("Cascadia Mono", 10F);
-            this.textBoxAvatarParameter.Location = new System.Drawing.Point(348, 0);
-            this.textBoxAvatarParameter.Name = "textBoxAvatarParameter";
-            this.textBoxAvatarParameter.ReadOnly = true;
-            this.textBoxAvatarParameter.Size = new System.Drawing.Size(150, 23);
-            this.textBoxAvatarParameter.TabIndex = 7;
-            // 
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+        this.components = new System.ComponentModel.Container();
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+        this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+        this.tabs = new System.Windows.Forms.TabControl();
+        this.tabMain = new System.Windows.Forms.TabPage();
+        this.labelDeviceInfo = new System.Windows.Forms.Label();
+        this.comboBoxDevices = new System.Windows.Forms.ComboBox();
+        this.buttonExecute = new System.Windows.Forms.Button();
+        this.labelDevice = new System.Windows.Forms.Label();
+        this.panelHeartRateDisplay = new System.Windows.Forms.Panel();
+        this.labelBatteryLevel = new System.Windows.Forms.Label();
+        this.labelHeartRateDisplay = new System.Windows.Forms.Label();
+        this.pictureBoxHeartRateDisplay = new System.Windows.Forms.PictureBox();
+        this.tabVRChatSettings = new System.Windows.Forms.TabPage();
+        this.panelAvatar = new System.Windows.Forms.Panel();
+        this.buttonAvatarParameterInfo = new System.Windows.Forms.Button();
+        this.textBoxAvatarParameter = new System.Windows.Forms.TextBox();
+        this.labelAvatarParameter = new System.Windows.Forms.Label();
+        this.checkBoxUseAvatar = new System.Windows.Forms.CheckBox();
+        this.panelChatbox = new System.Windows.Forms.Panel();
+        this.comboBoxChatboxAppearance = new System.Windows.Forms.ComboBox();
+        this.labelChatboxAppearance = new System.Windows.Forms.Label();
+        this.buttonSaveVRChatSettings = new System.Windows.Forms.Button();
+        this.panel1 = new System.Windows.Forms.Panel();
+        this.checkBoxUseChatbox = new System.Windows.Forms.CheckBox();
+        this.panelOsc = new System.Windows.Forms.Panel();
+        this.buttonOscAddressInfo = new System.Windows.Forms.Button();
+        this.textBoxOscAddress = new System.Windows.Forms.TextBox();
+        this.labelOscInfo = new System.Windows.Forms.Label();
+        this.labelOsc = new System.Windows.Forms.Label();
+        this.tabWebServerSettings = new System.Windows.Forms.TabPage();
+        this.labelWebServerHtml = new System.Windows.Forms.Label();
+        this.panelWebServerHtml = new System.Windows.Forms.Panel();
+        this.textBoxWebServerHtml = new System.Windows.Forms.TextBox();
+        this.buttonSaveWebServerSettings = new System.Windows.Forms.Button();
+        this.panelWebServer = new System.Windows.Forms.Panel();
+        this.buttonWebServerPortInfo = new System.Windows.Forms.Button();
+        this.textBoxWebServerPort = new System.Windows.Forms.TextBox();
+        this.labelWebServerPort = new System.Windows.Forms.Label();
+        this.checkBoxUseWebServer = new System.Windows.Forms.CheckBox();
+        this.tabDiscordSettings = new System.Windows.Forms.TabPage();
+        this.buttonSaveDiscordSettings = new System.Windows.Forms.Button();
+        this.labelDiscordInfo = new System.Windows.Forms.Label();
+        this.panelDiscordStateText = new System.Windows.Forms.Panel();
+        this.textBoxDiscordStateText = new System.Windows.Forms.TextBox();
+        this.labelDiscordStateText = new System.Windows.Forms.Label();
+        this.panelDiscordIdleText = new System.Windows.Forms.Panel();
+        this.textBoxDiscordIdleText = new System.Windows.Forms.TextBox();
+        this.labelDiscordIdleText = new System.Windows.Forms.Label();
+        this.panelDiscordActiveText = new System.Windows.Forms.Panel();
+        this.textBoxDiscordActiveText = new System.Windows.Forms.TextBox();
+        this.labelDiscordActiveText = new System.Windows.Forms.Label();
+        this.checkBoxUseDiscord = new System.Windows.Forms.CheckBox();
+        this.tabInfo = new System.Windows.Forms.TabPage();
+        this.panelInfoBottom = new System.Windows.Forms.Panel();
+        this.linkLabelInfoProjectUrl = new System.Windows.Forms.LinkLabel();
+        this.linkLabelInfoAuthorUrl = new System.Windows.Forms.LinkLabel();
+        this.labelInfoAuthorName = new System.Windows.Forms.Label();
+        this.labelInfoAppName = new System.Windows.Forms.Label();
+        this.panelInfoTop = new System.Windows.Forms.Panel();
+        this.pictureBoxInfoAuthor = new System.Windows.Forms.PictureBox();
+        this.panelFooter = new System.Windows.Forms.Panel();
+        this.pictureBoxFooterDiscord = new System.Windows.Forms.PictureBox();
+        this.linkLabelFooterWebsite = new System.Windows.Forms.LinkLabel();
+        this.tabs.SuspendLayout();
+        this.tabMain.SuspendLayout();
+        this.panelHeartRateDisplay.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHeartRateDisplay)).BeginInit();
+        this.tabVRChatSettings.SuspendLayout();
+        this.panelAvatar.SuspendLayout();
+        this.panelChatbox.SuspendLayout();
+        this.panel1.SuspendLayout();
+        this.panelOsc.SuspendLayout();
+        this.tabWebServerSettings.SuspendLayout();
+        this.panelWebServer.SuspendLayout();
+        this.tabDiscordSettings.SuspendLayout();
+        this.panelDiscordStateText.SuspendLayout();
+        this.panelDiscordIdleText.SuspendLayout();
+        this.panelDiscordActiveText.SuspendLayout();
+        this.tabInfo.SuspendLayout();
+        this.panelInfoBottom.SuspendLayout();
+        this.panelInfoTop.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfoAuthor)).BeginInit();
+        this.panelFooter.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFooterDiscord)).BeginInit();
+        this.panelWebServerHtml.SuspendLayout();
+        this.SuspendLayout();
+        // 
+        // notifyIcon
+        // 
+        this.notifyIcon.Visible = true;
+        // 
+        // tabs
+        // 
+        this.tabs.Controls.Add(this.tabMain);
+        this.tabs.Controls.Add(this.tabVRChatSettings);
+        this.tabs.Controls.Add(this.tabWebServerSettings);
+        this.tabs.Controls.Add(this.tabDiscordSettings);
+        this.tabs.Controls.Add(this.tabInfo);
+        this.tabs.Location = new System.Drawing.Point(2, 0);
+        this.tabs.Margin = new System.Windows.Forms.Padding(0);
+        this.tabs.Name = "tabs";
+        this.tabs.SelectedIndex = 0;
+        this.tabs.ShowToolTips = true;
+        this.tabs.Size = new System.Drawing.Size(532, 304);
+        this.tabs.TabIndex = 0;
+        // 
+        // tabMain
+        // 
+        this.tabMain.BackColor = System.Drawing.Color.White;
+        this.tabMain.Controls.Add(this.labelDeviceInfo);
+        this.tabMain.Controls.Add(this.comboBoxDevices);
+        this.tabMain.Controls.Add(this.buttonExecute);
+        this.tabMain.Controls.Add(this.labelDevice);
+        this.tabMain.Controls.Add(this.panelHeartRateDisplay);
+        this.tabMain.Controls.Add(this.buttonSwitchBLE); // Add the button to the tabMain controls.
+        this.tabMain.Location = new System.Drawing.Point(4, 22);
+        this.tabMain.Margin = new System.Windows.Forms.Padding(1);
+        this.tabMain.Name = "tabMain";
+        this.tabMain.Padding = new System.Windows.Forms.Padding(1, 1, 2, 30);
+        this.tabMain.Size = new System.Drawing.Size(524, 278);
+        this.tabMain.TabIndex = 0;
+        this.tabMain.Text = "Main";
+        // 
+        // buttonSwitchBLE
+        // 
+        this.buttonSwitchBLE.Location = new System.Drawing.Point(200, 20); // Adjust the location as needed
+        this.buttonSwitchBLE.Size = new System.Drawing.Size(150, 30); // Adjust the size as needed
+        this.buttonSwitchBLE.Text = "Switch to BLE";
+        this.buttonSwitchBLE.UseVisualStyleBackColor = true;
+        this.buttonSwitchBLE.Click += new System.EventHandler(this.buttonSwitchBLE_Click);
+        // 
+        // labelDeviceInfo
+        // 
+        this.labelDeviceInfo.Dock = System.Windows.Forms.DockStyle.Top;
+        this.labelDeviceInfo.Font = new System.Drawing.Font("Cascadia Mono", 8F);
+        this.labelDeviceInfo.Location = new System.Drawing.Point(1, 173);
+        this.labelDeviceInfo.Margin = new System.Windows.Forms.Padding(0);
+        this.labelDeviceInfo.Name = "labelDeviceInfo";
+        this.labelDeviceInfo.Size = new System.Drawing.Size(521, 20);
+        this.labelDeviceInfo.TabIndex = 4;
+        this.labelDeviceInfo.Text = "(Selected device will be used as default next time the application launches)";
+        this.labelDeviceInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+        // 
+        // comboBoxDevices
+        // 
+        this.comboBoxDevices.Dock = System.Windows.Forms.DockStyle.Top;
+        this.comboBoxDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        this.comboBoxDevices.Font = new System.Drawing.Font("Cascadia Mono", 13F);
+        this.comboBoxDevices.FormattingEnabled = true;
+        this.comboBoxDevices.IntegralHeight = false;
+        this.comboBoxDevices.ItemHeight = 22;
+        this.comboBoxDevices.Location = new System.Drawing.Point(1, 143);
+        this.comboBoxDevices.Margin = new System.Windows.Forms.Padding(1);
+        this.comboBoxDevices.Name = "comboBoxDevices";
+        this.comboBoxDevices.Size = new System.Drawing.Size(521, 30);
+        this.comboBoxDevices.TabIndex = 0;
+        // 
+        // buttonExecute
+        // 
+        this.buttonExecute.AutoSize = true;
+        this.buttonExecute.Dock = System.Windows.Forms.DockStyle.Bottom;
+        this.buttonExecute.Enabled = false;
+        this.buttonExecute.Font = new System.Drawing.Font("Cascadia Mono", 20F);
+        this.buttonExecute.Location = new System.Drawing.Point(1, 203);
+        this.buttonExecute.Margin = new System.Windows.Forms.Padding(1);
+        this.buttonExecute.Name = "buttonExecute";
+        this.buttonExecute.Size = new System.Drawing.Size(521, 45);
+        this.buttonExecute.TabIndex = 5;
+        this.buttonExecute.Text = "START";
+        this.buttonExecute.UseVisualStyleBackColor = true;
+        this.buttonExecute.Click += new System.EventHandler(this.buttonExecute_Click);
+        // 
+        // labelDevice
+        // 
+        this.labelDevice.Dock = System.Windows.Forms.DockStyle.Top;
+        this.labelDevice.Font = new System.Drawing.Font("Cascadia Mono", 14F);
+        this.labelDevice.Location = new System.Drawing.Point(1, 113);
+        this.labelDevice.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+        this.labelDevice.Name = "labelDevice";
+        this.labelDevice.Size = new System.Drawing.Size(521, 30);
+        this.labelDevice.TabIndex = 2;
+        this.labelDevice.Text = "Select device from the list below:";
+        // 
+        // panelHeartRateDisplay
+        // 
+        this.panelHeartRateDisplay.Controls.Add(this.labelBatteryLevel);
+        this.panelHeartRateDisplay.Controls.Add(this.labelHeartRateDisplay);
+        this.panelHeartRateDisplay.Controls.Add(this.pictureBoxHeartRateDisplay);
+        this.panelHeartRateDisplay.Dock = System.Windows.Forms.DockStyle.Top;
+        this.panelHeartRateDisplay.Location = new System.Drawing.Point(1, 1);
+        this.panelHeartRateDisplay.Margin = new System.Windows.Forms.Padding(0);
+        this.panelHeartRateDisplay.Name = "panelHeartRateDisplay";
+        this.panelHeartRateDisplay.Size = new System.Drawing.Size(521, 112);
+        this.panelHeartRateDisplay.TabIndex = 1;
+        // 
+        // labelBatteryLevel
+        // 
+        this.labelBatteryLevel.BackColor = System.Drawing.Color.Transparent;
+        this.labelBatteryLevel.Dock = System.Windows.Forms.DockStyle.Fill;
+        this.labelBatteryLevel.Font = new System.Drawing.Font("Cascadia Mono", 10F, System.Drawing.FontStyle.Bold);
+        this.labelBatteryLevel.ForeColor = System.Drawing.Color.White;
+        this.labelBatteryLevel.Location = new System.Drawing.Point(0, 0);
+        this.labelBatteryLevel.Name = "labelBatteryLevel";
+        this.labelBatteryLevel.Padding = new System.Windows.Forms.Padding(59, 0, 0, 70);
+        this.labelBatteryLevel.Size = new System.Drawing.Size(521, 112);
+        this.labelBatteryLevel.TabIndex = 6;
+        this.labelBatteryLevel.Text = "⚡100%";
+        this.labelBatteryLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
+        // labelHeartRateDisplay
+        // 
+        this.labelHeartRateDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+        this.labelHeartRateDisplay.Font = new System.Drawing.Font("Cascadia Mono", 36F);
+        this.labelHeartRateDisplay.ForeColor = System.Drawing.Color.White;
+        this.labelHeartRateDisplay.Location = new System.Drawing.Point(0, 0);
+        this.labelHeartRateDisplay.Margin = new System.Windows.Forms.Padding(0);
+        this.labelHeartRateDisplay.Name = "labelHeartRateDisplay";
+        this.labelHeartRateDisplay.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+        this.labelHeartRateDisplay.Size = new System.Drawing.Size(521, 112);
+        this.labelHeartRateDisplay.TabIndex = 8;
+        this.labelHeartRateDisplay.Text = "69";
+        this.labelHeartRateDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        this.labelHeartRateDisplay.Visible = false;
+        // 
+        // pictureBoxHeartRateDisplay
+        // 
+        this.pictureBoxHeartRateDisplay.BackColor = System.Drawing.Color.Transparent;
+        this.pictureBoxHeartRateDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+        this.pictureBoxHeartRateDisplay.Image = global::VRChatHeartRateMonitor.Properties.Resources.heart;
+        this.pictureBoxHeartRateDisplay.Location = new System.Drawing.Point(0, 0);
+        this.pictureBoxHeartRateDisplay.Margin = new System.Windows.Forms.Padding(0);
+        this.pictureBoxHeartRateDisplay.Name = "pictureBoxHeartRateDisplay";
+        this.pictureBoxHeartRateDisplay.Size = new System.Drawing.Size(521, 112);
+        this.pictureBoxHeartRateDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+        this.pictureBoxHeartRateDisplay.TabIndex = 1;
+        this.pictureBoxHeartRateDisplay.TabStop = false;
+        // 
+        // tabVRChatSettings
+        // 
+        this.tabVRChatSettings.BackColor = System.Drawing.Color.White;
+        this.tabVRChatSettings.Controls.Add(this.panelAvatar);
+        this.tabVRChatSettings.Controls.Add(this.checkBoxUseAvatar);
+        this.tabVRChatSettings.Controls.Add(this.panelChatbox);
+        this.tabVRChatSettings.Controls.Add(this.buttonSaveVRChatSettings);
+        this.tabVRChatSettings.Controls.Add(this.panel1);
+        this.tabVRChatSettings.Controls.Add(this.panelOsc);
+        this.tabVRChatSettings.Controls.Add(this.labelOsc);
+        this.tabVRChatSettings.Location = new System.Drawing.Point(4, 22);
+        this.tabVRChatSettings.Margin = new System.Windows.Forms.Padding(1);
+        this.tabVRChatSettings.Name = "tabVRChatSettings";
+        this.tabVRChatSettings.Padding = new System.Windows.Forms.Padding(1, 1, 1, 30);
+        this.tabVRChatSettings.Size = new System.Drawing.Size(524, 278);
+        this.tabVRChatSettings.TabIndex = 1;
+        this.tabVRChatSettings.Text = "VRChat";
+        // 
+        // panelAvatar
+        // 
+        this.panelAvatar.Controls.Add(this.buttonAvatarParameterInfo);
+        this.panelAvatar.Controls.Add(this.textBoxAvatarParameter);
+        this.panelAvatar.Controls.Add(this.labelAvatarParameter);
+        this.panelAvatar.Dock = System.Windows.Forms.DockStyle.Top;
+        this.panelAvatar.Location = new System.Drawing.Point(1, 147);
+        this.panelAvatar.Name = "panelAvatar";
+        this.panelAvatar.Size = new System.Drawing.Size(522, 33);
+        this.panelAvatar.TabIndex = 8;
+        // 
+        // buttonAvatarParameterInfo
+        // 
+        this.buttonAvatarParameterInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+        this.buttonAvatarParameterInfo.Font = new System.Drawing.Font("Cascadia Mono", 11F);
+        this.buttonAvatarParameterInfo.Location = new System.Drawing.Point(497, 0);
+        this.buttonAvatarParameterInfo.Name = "buttonAvatarParameterInfo";
+        this.buttonAvatarParameterInfo.Size = new System.Drawing.Size(23, 23);
+        this.buttonAvatarParameterInfo.TabIndex = 8;
+        this.buttonAvatarParameterInfo.Text = "?";
+        this.buttonAvatarParameterInfo.UseVisualStyleBackColor = true;
+        this.buttonAvatarParameterInfo.Click += new System.EventHandler(this.buttonAvatarParameterInfo_Click);
+        // 
+        // textBoxAvatarParameter
+        // 
+        this.textBoxAvatarParameter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        this.textBoxAvatarParameter.Dock = System.Windows.Forms.DockStyle.Left;
+        this.textBoxAvatarParameter.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+        this.textBoxAvatarParameter.Location = new System.Drawing.Point(348, 0);
+        this.textBoxAvatarParameter.Name = "textBoxAvatarParameter";
+        this.textBoxAvatarParameter.ReadOnly = true;
+        this.textBoxAvatarParameter.Size = new System.Drawing.Size(150, 23);
+        this.textBoxAvatarParameter.TabIndex = 7;
+        // 
             // labelAvatarParameter
             // 
             this.labelAvatarParameter.Dock = System.Windows.Forms.DockStyle.Left;
