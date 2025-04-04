@@ -1,6 +1,7 @@
 /// This just decides automatically between BLE Bluetooth Low energy (some wristbands, smartwatches) using GATT and other BE connections.
 using System;
 using BleHandler;
+using VRChatHeartRateMonitor;
 
 namespace VRChatHeartRateMonitor
 {
