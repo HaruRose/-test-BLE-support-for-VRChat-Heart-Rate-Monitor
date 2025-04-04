@@ -10,7 +10,6 @@ using System.Diagnostics;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Net;
-using VRChatHeartRateMonitor;
 
 namespace VRChatHeartRateMonitor
 {
@@ -19,7 +18,7 @@ namespace VRChatHeartRateMonitor
         private PrivateFontCollection _privateFonts = new PrivateFontCollection();
         private UpdateHandler _updateHandler;
         private System.Windows.Forms.Timer _heartbeatEffectTimer;
-        private DeviceHandler _deviceHandler;
+        private IDeviceHandler _deviceHandler;
         private Dictionary<ulong, string> _deviceMap = new Dictionary<ulong, string>();
         private BleHandler bleHandler;
         private CancellationTokenSource _autoConnectCountdownCancellationToken;
@@ -41,7 +40,7 @@ namespace VRChatHeartRateMonitor
         private string _discordIdleText = "Ideling with my VRC Heart Rate Monitor!";
         private string _discordStateText = "{0} BPM";
         private bool isScanning = false;
-        private Button buttonSwitchBLE;
+        private CheckBox checkBoxSwitchBLE;
 
         public MainForm()
         {
@@ -52,6 +51,14 @@ namespace VRChatHeartRateMonitor
             InitializeForm();
             InitializeUpdate();
             InitializeHeartbeatEffect();
+            InitializeDeviceHandler();
+            InitializeVRChatOscHandler();
+            InitializeWebServerHandler();
+            InitializeDiscordHandler();
+
+            // Initialize the appropriate device handler
+            _deviceHandler = new DeviceHandler(); // or new BleHandler();
+
             InitializeDeviceHandler();
             InitializeVRChatOscHandler();
             InitializeWebServerHandler();
@@ -69,9 +76,9 @@ namespace VRChatHeartRateMonitor
             };
             checkBoxSwitchBLE.CheckedChanged += new EventHandler(checkBoxSwitchBLE_CheckedChanged);
             this.Controls.Add(checkBoxSwitchBLE);
-                     
-        // Initialize BleHandler
-        bleHandler = new BleHandler();
+
+            // Initialize BleHandler
+            bleHandler = new BleHandler();
             bleHandler.HeartRateUpdated += OnHeartRateUpdated;
         }
 
@@ -94,20 +101,19 @@ namespace VRChatHeartRateMonitor
         }
         private void buttonSwitchBLE_Click(object sender, EventArgs e)
         {
-            if (isScanning)
-            {
-                // Stop BLE scanning
-                bleHandler.StopScanning();
-                buttonSwitchBLE.Text = "Switch to BLE";
-                isScanning = false;
-            }
-            else
-            {
-                // Start BLE scanning
-                bleHandler.StartScanning();
-                buttonSwitchBLE.Text = "Stop BLE";
-                isScanning = true;
-            }
+            SwitchToBLEFunction();
+        }
+
+        private void SwitchToBLEFunction()
+        {
+            StopHandlers();
+            StartBLEHandlers();
+            MessageBox.Show("Switched to BLE Functionality");
+        }
+
+        private void StartBLEHandlers()
+        {
+            _deviceHandler.StartBLE();
         }
 
         private void OnHeartRateUpdated(int heartRate)
@@ -336,7 +342,7 @@ namespace VRChatHeartRateMonitor
         private void DeviceManager_AdapterError()
         {
             SafeInvoke(() => {
-                if (HeartRateMonitor.ActionMessageBox("Bluetooth adapter couldn't handle connection, make sure it's enabled in your system and has full Bluetooth Low Energy compatibility!\n\nWould You like to try again?"))
+                if (HeartRateMonitor.ActionMessageBox("Bluetooth adapter couldn't handle connection, make sure it's enabled in your system and has full Bluetooth Low Energy compatibility!\n\nWould you like to retry?"))
                     _deviceHandler.StartScanning();
                 else
                     this.Close();
@@ -375,7 +381,6 @@ namespace VRChatHeartRateMonitor
             });
         }
 
-
         private void DeviceManager_DeviceDisconnecting()
         {
             SafeInvoke(() => {
@@ -409,7 +414,7 @@ namespace VRChatHeartRateMonitor
             SafeInvoke(() => {
                 message += "\n\nPlease try reconnecting. If the issue persists, follow these simple troubleshooting steps:\n\n";
                 message += "1. Restart the app.\n";
-                message += "2. Make sure your HR monitor isn't already connected to different device for example your phone etc.\n";
+                message += "2. Make sure your HR monitor isn't already connected to a different device, for example, your phone, etc.\n";
                 message += "3. Toggle Bluetooth off, wait 10 seconds, then turn it back on.\n";
                 message += "4. Restart your heart rate monitor.\n\n";
                 message += "Note: Even if you resolve the issue, please report it on our Discord server to help us improve the app.";
@@ -439,7 +444,6 @@ namespace VRChatHeartRateMonitor
                 comboBoxDevices.Items.RemoveAt(0);
                 buttonExecute.Enabled = true;
             }
-
 
             if (!_deviceMap.ContainsKey(bluetoothDeviceAddress))
             {
