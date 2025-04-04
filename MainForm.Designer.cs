@@ -36,6 +36,7 @@ namespace VRChatHeartRateMonitor
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
+            this.buttonSwitchBLE = new System.Windows.Forms.Button();
             this.labelDeviceInfo = new System.Windows.Forms.Label();
             this.comboBoxDevices = new System.Windows.Forms.ComboBox();
             this.buttonExecute = new System.Windows.Forms.Button();
@@ -44,8 +45,6 @@ namespace VRChatHeartRateMonitor
             this.labelBatteryLevel = new System.Windows.Forms.Label();
             this.labelHeartRateDisplay = new System.Windows.Forms.Label();
             this.pictureBoxHeartRateDisplay = new System.Windows.Forms.PictureBox();
-            this.buttonSwitchBLE = new System.Windows.Forms.Button(); // Keep this declaration
-
             this.tabVRChatSettings = new System.Windows.Forms.TabPage();
             this.panelAvatar = new System.Windows.Forms.Panel();
             this.buttonAvatarParameterInfo = new System.Windows.Forms.Button();
@@ -64,9 +63,9 @@ namespace VRChatHeartRateMonitor
             this.labelOscInfo = new System.Windows.Forms.Label();
             this.labelOsc = new System.Windows.Forms.Label();
             this.tabWebServerSettings = new System.Windows.Forms.TabPage();
-            this.labelWebServerHtml = new System.Windows.Forms.Label();
             this.panelWebServerHtml = new System.Windows.Forms.Panel();
             this.textBoxWebServerHtml = new System.Windows.Forms.TextBox();
+            this.labelWebServerHtml = new System.Windows.Forms.Label();
             this.buttonSaveWebServerSettings = new System.Windows.Forms.Button();
             this.panelWebServer = new System.Windows.Forms.Panel();
             this.buttonWebServerPortInfo = new System.Windows.Forms.Button();
@@ -107,6 +106,7 @@ namespace VRChatHeartRateMonitor
             this.panel1.SuspendLayout();
             this.panelOsc.SuspendLayout();
             this.tabWebServerSettings.SuspendLayout();
+            this.panelWebServerHtml.SuspendLayout();
             this.panelWebServer.SuspendLayout();
             this.tabDiscordSettings.SuspendLayout();
             this.panelDiscordStateText.SuspendLayout();
@@ -118,7 +118,6 @@ namespace VRChatHeartRateMonitor
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfoAuthor)).BeginInit();
             this.panelFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFooterDiscord)).BeginInit();
-            this.panelWebServerHtml.SuspendLayout();
             this.SuspendLayout();
             // 
             // notifyIcon
@@ -143,12 +142,12 @@ namespace VRChatHeartRateMonitor
             // tabMain
             // 
             this.tabMain.BackColor = System.Drawing.Color.White;
+            this.tabMain.Controls.Add(this.buttonSwitchBLE);
             this.tabMain.Controls.Add(this.labelDeviceInfo);
             this.tabMain.Controls.Add(this.comboBoxDevices);
             this.tabMain.Controls.Add(this.buttonExecute);
             this.tabMain.Controls.Add(this.labelDevice);
             this.tabMain.Controls.Add(this.panelHeartRateDisplay);
-            this.tabMain.Controls.Add(this.buttonSwitchBLE); // Add the button to the tabMain controls.
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Margin = new System.Windows.Forms.Padding(1);
             this.tabMain.Name = "tabMain";
@@ -159,16 +158,10 @@ namespace VRChatHeartRateMonitor
             // 
             // buttonSwitchBLE
             // 
-            this.tabMain.Controls.Add(this.buttonSwitchBLE);
-            this.tabMain.Controls.Add(this.labelDeviceInfo);
-            this.tabMain.Controls.Add(this.comboBoxDevices);
-            this.tabMain.Controls.Add(this.buttonExecute);
-            this.tabMain.Controls.Add(this.labelDevice);
-            this.tabMain.Controls.Add(this.panelHeartRateDisplay);
-
-            // Set properties for buttonSwitchBLE
-            this.buttonSwitchBLE.Location = new System.Drawing.Point(200, 20); // Adjust the location as needed
-            this.buttonSwitchBLE.Size = new System.Drawing.Size(150, 30); // Adjust the size as needed
+            this.buttonSwitchBLE.Location = new System.Drawing.Point(200, 20);
+            this.buttonSwitchBLE.Name = "buttonSwitchBLE";
+            this.buttonSwitchBLE.Size = new System.Drawing.Size(150, 30);
+            this.buttonSwitchBLE.TabIndex = 6;
             this.buttonSwitchBLE.Text = "Switch to BLE";
             this.buttonSwitchBLE.UseVisualStyleBackColor = true;
             this.buttonSwitchBLE.Click += new System.EventHandler(this.buttonSwitchBLE_Click);
@@ -176,8 +169,8 @@ namespace VRChatHeartRateMonitor
             // labelDeviceInfo
             // 
             this.labelDeviceInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDeviceInfo.Font = new System.Drawing.Font("Cascadia Mono", 8F);
-            this.labelDeviceInfo.Location = new System.Drawing.Point(1, 173);
+            this.labelDeviceInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.labelDeviceInfo.Location = new System.Drawing.Point(1, 171);
             this.labelDeviceInfo.Margin = new System.Windows.Forms.Padding(0);
             this.labelDeviceInfo.Name = "labelDeviceInfo";
             this.labelDeviceInfo.Size = new System.Drawing.Size(521, 20);
@@ -189,14 +182,14 @@ namespace VRChatHeartRateMonitor
             // 
             this.comboBoxDevices.Dock = System.Windows.Forms.DockStyle.Top;
             this.comboBoxDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDevices.Font = new System.Drawing.Font("Cascadia Mono", 13F);
+            this.comboBoxDevices.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.comboBoxDevices.FormattingEnabled = true;
             this.comboBoxDevices.IntegralHeight = false;
-            this.comboBoxDevices.ItemHeight = 22;
+            this.comboBoxDevices.ItemHeight = 20;
             this.comboBoxDevices.Location = new System.Drawing.Point(1, 143);
             this.comboBoxDevices.Margin = new System.Windows.Forms.Padding(1);
             this.comboBoxDevices.Name = "comboBoxDevices";
-            this.comboBoxDevices.Size = new System.Drawing.Size(521, 30);
+            this.comboBoxDevices.Size = new System.Drawing.Size(521, 28);
             this.comboBoxDevices.TabIndex = 0;
             // 
             // buttonExecute
@@ -204,7 +197,7 @@ namespace VRChatHeartRateMonitor
             this.buttonExecute.AutoSize = true;
             this.buttonExecute.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonExecute.Enabled = false;
-            this.buttonExecute.Font = new System.Drawing.Font("Cascadia Mono", 20F);
+            this.buttonExecute.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.buttonExecute.Location = new System.Drawing.Point(1, 203);
             this.buttonExecute.Margin = new System.Windows.Forms.Padding(1);
             this.buttonExecute.Name = "buttonExecute";
@@ -217,7 +210,7 @@ namespace VRChatHeartRateMonitor
             // labelDevice
             // 
             this.labelDevice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDevice.Font = new System.Drawing.Font("Cascadia Mono", 14F);
+            this.labelDevice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.labelDevice.Location = new System.Drawing.Point(1, 113);
             this.labelDevice.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelDevice.Name = "labelDevice";
@@ -241,7 +234,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.labelBatteryLevel.BackColor = System.Drawing.Color.Transparent;
             this.labelBatteryLevel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelBatteryLevel.Font = new System.Drawing.Font("Cascadia Mono", 10F, System.Drawing.FontStyle.Bold);
+            this.labelBatteryLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.labelBatteryLevel.ForeColor = System.Drawing.Color.White;
             this.labelBatteryLevel.Location = new System.Drawing.Point(0, 0);
             this.labelBatteryLevel.Name = "labelBatteryLevel";
@@ -254,7 +247,7 @@ namespace VRChatHeartRateMonitor
             // labelHeartRateDisplay
             // 
             this.labelHeartRateDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHeartRateDisplay.Font = new System.Drawing.Font("Cascadia Mono", 36F);
+            this.labelHeartRateDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.labelHeartRateDisplay.ForeColor = System.Drawing.Color.White;
             this.labelHeartRateDisplay.Location = new System.Drawing.Point(0, 0);
             this.labelHeartRateDisplay.Margin = new System.Windows.Forms.Padding(0);
@@ -303,7 +296,7 @@ namespace VRChatHeartRateMonitor
             this.panelAvatar.Controls.Add(this.textBoxAvatarParameter);
             this.panelAvatar.Controls.Add(this.labelAvatarParameter);
             this.panelAvatar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAvatar.Location = new System.Drawing.Point(1, 147);
+            this.panelAvatar.Location = new System.Drawing.Point(1, 144);
             this.panelAvatar.Name = "panelAvatar";
             this.panelAvatar.Size = new System.Drawing.Size(522, 33);
             this.panelAvatar.TabIndex = 8;
@@ -311,7 +304,7 @@ namespace VRChatHeartRateMonitor
             // buttonAvatarParameterInfo
             // 
             this.buttonAvatarParameterInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAvatarParameterInfo.Font = new System.Drawing.Font("Cascadia Mono", 11F);
+            this.buttonAvatarParameterInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.buttonAvatarParameterInfo.Location = new System.Drawing.Point(497, 0);
             this.buttonAvatarParameterInfo.Name = "buttonAvatarParameterInfo";
             this.buttonAvatarParameterInfo.Size = new System.Drawing.Size(23, 23);
@@ -324,7 +317,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.textBoxAvatarParameter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAvatarParameter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBoxAvatarParameter.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.textBoxAvatarParameter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxAvatarParameter.Location = new System.Drawing.Point(348, 0);
             this.textBoxAvatarParameter.Name = "textBoxAvatarParameter";
             this.textBoxAvatarParameter.ReadOnly = true;
@@ -334,7 +327,7 @@ namespace VRChatHeartRateMonitor
             // labelAvatarParameter
             // 
             this.labelAvatarParameter.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelAvatarParameter.Font = new System.Drawing.Font("Cascadia Mono", 9F);
+            this.labelAvatarParameter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.labelAvatarParameter.Location = new System.Drawing.Point(0, 0);
             this.labelAvatarParameter.Name = "labelAvatarParameter";
             this.labelAvatarParameter.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
@@ -346,11 +339,11 @@ namespace VRChatHeartRateMonitor
             // 
             this.checkBoxUseAvatar.AutoSize = true;
             this.checkBoxUseAvatar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBoxUseAvatar.Font = new System.Drawing.Font("Cascadia Mono", 10F);
-            this.checkBoxUseAvatar.Location = new System.Drawing.Point(1, 120);
+            this.checkBoxUseAvatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.checkBoxUseAvatar.Location = new System.Drawing.Point(1, 118);
             this.checkBoxUseAvatar.Name = "checkBoxUseAvatar";
             this.checkBoxUseAvatar.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
-            this.checkBoxUseAvatar.Size = new System.Drawing.Size(522, 27);
+            this.checkBoxUseAvatar.Size = new System.Drawing.Size(522, 26);
             this.checkBoxUseAvatar.TabIndex = 1;
             this.checkBoxUseAvatar.Text = "VRChat Avatar";
             this.checkBoxUseAvatar.UseVisualStyleBackColor = true;
@@ -361,7 +354,7 @@ namespace VRChatHeartRateMonitor
             this.panelChatbox.Controls.Add(this.comboBoxChatboxAppearance);
             this.panelChatbox.Controls.Add(this.labelChatboxAppearance);
             this.panelChatbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelChatbox.Location = new System.Drawing.Point(1, 87);
+            this.panelChatbox.Location = new System.Drawing.Point(1, 85);
             this.panelChatbox.Name = "panelChatbox";
             this.panelChatbox.Size = new System.Drawing.Size(522, 33);
             this.panelChatbox.TabIndex = 12;
@@ -370,7 +363,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.comboBoxChatboxAppearance.Dock = System.Windows.Forms.DockStyle.Left;
             this.comboBoxChatboxAppearance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxChatboxAppearance.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.comboBoxChatboxAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxChatboxAppearance.FormattingEnabled = true;
             this.comboBoxChatboxAppearance.Items.AddRange(new object[] {
             "Type 1",
@@ -380,13 +373,13 @@ namespace VRChatHeartRateMonitor
             "Type 5"});
             this.comboBoxChatboxAppearance.Location = new System.Drawing.Point(348, 0);
             this.comboBoxChatboxAppearance.Name = "comboBoxChatboxAppearance";
-            this.comboBoxChatboxAppearance.Size = new System.Drawing.Size(173, 25);
+            this.comboBoxChatboxAppearance.Size = new System.Drawing.Size(173, 24);
             this.comboBoxChatboxAppearance.TabIndex = 6;
             // 
             // labelChatboxAppearance
             // 
             this.labelChatboxAppearance.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelChatboxAppearance.Font = new System.Drawing.Font("Cascadia Mono", 9F);
+            this.labelChatboxAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.labelChatboxAppearance.Location = new System.Drawing.Point(0, 0);
             this.labelChatboxAppearance.Name = "labelChatboxAppearance";
             this.labelChatboxAppearance.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
@@ -398,7 +391,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.buttonSaveVRChatSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonSaveVRChatSettings.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonSaveVRChatSettings.Font = new System.Drawing.Font("Cascadia Mono", 20F);
+            this.buttonSaveVRChatSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.buttonSaveVRChatSettings.Location = new System.Drawing.Point(1, 203);
             this.buttonSaveVRChatSettings.Name = "buttonSaveVRChatSettings";
             this.buttonSaveVRChatSettings.Size = new System.Drawing.Size(522, 45);
@@ -412,20 +405,20 @@ namespace VRChatHeartRateMonitor
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.checkBoxUseChatbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(1, 60);
+            this.panel1.Location = new System.Drawing.Point(1, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 27);
+            this.panel1.Size = new System.Drawing.Size(522, 26);
             this.panel1.TabIndex = 11;
             // 
             // checkBoxUseChatbox
             // 
             this.checkBoxUseChatbox.AutoSize = true;
             this.checkBoxUseChatbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBoxUseChatbox.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.checkBoxUseChatbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkBoxUseChatbox.Location = new System.Drawing.Point(0, 0);
             this.checkBoxUseChatbox.Name = "checkBoxUseChatbox";
             this.checkBoxUseChatbox.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
-            this.checkBoxUseChatbox.Size = new System.Drawing.Size(522, 27);
+            this.checkBoxUseChatbox.Size = new System.Drawing.Size(522, 26);
             this.checkBoxUseChatbox.TabIndex = 0;
             this.checkBoxUseChatbox.Text = "VRChat Chatbox";
             this.checkBoxUseChatbox.UseVisualStyleBackColor = true;
@@ -437,7 +430,7 @@ namespace VRChatHeartRateMonitor
             this.panelOsc.Controls.Add(this.textBoxOscAddress);
             this.panelOsc.Controls.Add(this.labelOscInfo);
             this.panelOsc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelOsc.Location = new System.Drawing.Point(1, 27);
+            this.panelOsc.Location = new System.Drawing.Point(1, 26);
             this.panelOsc.Name = "panelOsc";
             this.panelOsc.Size = new System.Drawing.Size(522, 33);
             this.panelOsc.TabIndex = 12;
@@ -445,7 +438,7 @@ namespace VRChatHeartRateMonitor
             // buttonOscAddressInfo
             // 
             this.buttonOscAddressInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOscAddressInfo.Font = new System.Drawing.Font("Cascadia Mono", 11F);
+            this.buttonOscAddressInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.buttonOscAddressInfo.Location = new System.Drawing.Point(497, 0);
             this.buttonOscAddressInfo.Name = "buttonOscAddressInfo";
             this.buttonOscAddressInfo.Size = new System.Drawing.Size(23, 23);
@@ -458,7 +451,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.textBoxOscAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxOscAddress.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBoxOscAddress.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.textBoxOscAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxOscAddress.Location = new System.Drawing.Point(348, 0);
             this.textBoxOscAddress.Name = "textBoxOscAddress";
             this.textBoxOscAddress.ReadOnly = true;
@@ -468,7 +461,7 @@ namespace VRChatHeartRateMonitor
             // labelOscInfo
             // 
             this.labelOscInfo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelOscInfo.Font = new System.Drawing.Font("Cascadia Mono", 9F);
+            this.labelOscInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.labelOscInfo.Location = new System.Drawing.Point(0, 0);
             this.labelOscInfo.Name = "labelOscInfo";
             this.labelOscInfo.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
@@ -480,11 +473,11 @@ namespace VRChatHeartRateMonitor
             // 
             this.labelOsc.AutoSize = true;
             this.labelOsc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelOsc.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.labelOsc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelOsc.Location = new System.Drawing.Point(1, 1);
             this.labelOsc.Name = "labelOsc";
             this.labelOsc.Padding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.labelOsc.Size = new System.Drawing.Size(264, 26);
+            this.labelOsc.Size = new System.Drawing.Size(229, 25);
             this.labelOsc.TabIndex = 5;
             this.labelOsc.Text = "VRChat OSC IP address and port:";
             // 
@@ -504,11 +497,48 @@ namespace VRChatHeartRateMonitor
             this.tabWebServerSettings.TabIndex = 3;
             this.tabWebServerSettings.Text = "Web Server";
             // 
+            // panelWebServerHtml
+            // 
+            this.panelWebServerHtml.BackColor = System.Drawing.Color.Transparent;
+            this.panelWebServerHtml.Controls.Add(this.textBoxWebServerHtml);
+            this.panelWebServerHtml.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelWebServerHtml.Location = new System.Drawing.Point(1, 76);
+            this.panelWebServerHtml.Name = "panelWebServerHtml";
+            this.panelWebServerHtml.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
+            this.panelWebServerHtml.Size = new System.Drawing.Size(522, 120);
+            this.panelWebServerHtml.TabIndex = 13;
+            // 
+            // textBoxWebServerHtml
+            // 
+            this.textBoxWebServerHtml.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxWebServerHtml.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWebServerHtml.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxWebServerHtml.Location = new System.Drawing.Point(11, 0);
+            this.textBoxWebServerHtml.MaxLength = 16383;
+            this.textBoxWebServerHtml.Multiline = true;
+            this.textBoxWebServerHtml.Name = "textBoxWebServerHtml";
+            this.textBoxWebServerHtml.ReadOnly = true;
+            this.textBoxWebServerHtml.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxWebServerHtml.Size = new System.Drawing.Size(500, 120);
+            this.textBoxWebServerHtml.TabIndex = 8;
+            this.textBoxWebServerHtml.WordWrap = false;
+            // 
+            // labelWebServerHtml
+            // 
+            this.labelWebServerHtml.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelWebServerHtml.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelWebServerHtml.Location = new System.Drawing.Point(1, 51);
+            this.labelWebServerHtml.Name = "labelWebServerHtml";
+            this.labelWebServerHtml.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
+            this.labelWebServerHtml.Size = new System.Drawing.Size(522, 25);
+            this.labelWebServerHtml.TabIndex = 12;
+            this.labelWebServerHtml.Text = "HTML/JS template:";
+            // 
             // buttonSaveWebServerSettings
             // 
             this.buttonSaveWebServerSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonSaveWebServerSettings.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonSaveWebServerSettings.Font = new System.Drawing.Font("Cascadia Mono", 20F);
+            this.buttonSaveWebServerSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.buttonSaveWebServerSettings.Location = new System.Drawing.Point(1, 203);
             this.buttonSaveWebServerSettings.Name = "buttonSaveWebServerSettings";
             this.buttonSaveWebServerSettings.Size = new System.Drawing.Size(522, 45);
@@ -524,7 +554,7 @@ namespace VRChatHeartRateMonitor
             this.panelWebServer.Controls.Add(this.textBoxWebServerPort);
             this.panelWebServer.Controls.Add(this.labelWebServerPort);
             this.panelWebServer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelWebServer.Location = new System.Drawing.Point(1, 28);
+            this.panelWebServer.Location = new System.Drawing.Point(1, 27);
             this.panelWebServer.Name = "panelWebServer";
             this.panelWebServer.Size = new System.Drawing.Size(522, 24);
             this.panelWebServer.TabIndex = 9;
@@ -532,7 +562,7 @@ namespace VRChatHeartRateMonitor
             // buttonWebServerPortInfo
             // 
             this.buttonWebServerPortInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonWebServerPortInfo.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.buttonWebServerPortInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonWebServerPortInfo.Location = new System.Drawing.Point(497, 0);
             this.buttonWebServerPortInfo.Name = "buttonWebServerPortInfo";
             this.buttonWebServerPortInfo.Size = new System.Drawing.Size(23, 23);
@@ -545,7 +575,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.textBoxWebServerPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxWebServerPort.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBoxWebServerPort.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.textBoxWebServerPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxWebServerPort.Location = new System.Drawing.Point(348, 0);
             this.textBoxWebServerPort.Name = "textBoxWebServerPort";
             this.textBoxWebServerPort.ReadOnly = true;
@@ -555,7 +585,7 @@ namespace VRChatHeartRateMonitor
             // labelWebServerPort
             // 
             this.labelWebServerPort.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelWebServerPort.Font = new System.Drawing.Font("Cascadia Mono", 9F);
+            this.labelWebServerPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.labelWebServerPort.Location = new System.Drawing.Point(0, 0);
             this.labelWebServerPort.Name = "labelWebServerPort";
             this.labelWebServerPort.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
@@ -567,11 +597,11 @@ namespace VRChatHeartRateMonitor
             // 
             this.checkBoxUseWebServer.AutoSize = true;
             this.checkBoxUseWebServer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBoxUseWebServer.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.checkBoxUseWebServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkBoxUseWebServer.Location = new System.Drawing.Point(1, 1);
             this.checkBoxUseWebServer.Name = "checkBoxUseWebServer";
             this.checkBoxUseWebServer.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
-            this.checkBoxUseWebServer.Size = new System.Drawing.Size(522, 27);
+            this.checkBoxUseWebServer.Size = new System.Drawing.Size(522, 26);
             this.checkBoxUseWebServer.TabIndex = 2;
             this.checkBoxUseWebServer.Text = "Web Server";
             this.checkBoxUseWebServer.UseVisualStyleBackColor = true;
@@ -601,7 +631,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.buttonSaveDiscordSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonSaveDiscordSettings.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonSaveDiscordSettings.Font = new System.Drawing.Font("Cascadia Mono", 20F);
+            this.buttonSaveDiscordSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.buttonSaveDiscordSettings.Location = new System.Drawing.Point(1, 203);
             this.buttonSaveDiscordSettings.Name = "buttonSaveDiscordSettings";
             this.buttonSaveDiscordSettings.Size = new System.Drawing.Size(522, 45);
@@ -613,8 +643,8 @@ namespace VRChatHeartRateMonitor
             // labelDiscordInfo
             // 
             this.labelDiscordInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDiscordInfo.Font = new System.Drawing.Font("Cascadia Mono", 8F);
-            this.labelDiscordInfo.Location = new System.Drawing.Point(1, 172);
+            this.labelDiscordInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.labelDiscordInfo.Location = new System.Drawing.Point(1, 171);
             this.labelDiscordInfo.Margin = new System.Windows.Forms.Padding(0);
             this.labelDiscordInfo.Name = "labelDiscordInfo";
             this.labelDiscordInfo.Size = new System.Drawing.Size(522, 20);
@@ -627,7 +657,7 @@ namespace VRChatHeartRateMonitor
             this.panelDiscordStateText.BackColor = System.Drawing.Color.Transparent;
             this.panelDiscordStateText.Controls.Add(this.textBoxDiscordStateText);
             this.panelDiscordStateText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDiscordStateText.Location = new System.Drawing.Point(1, 149);
+            this.panelDiscordStateText.Location = new System.Drawing.Point(1, 148);
             this.panelDiscordStateText.Name = "panelDiscordStateText";
             this.panelDiscordStateText.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.panelDiscordStateText.Size = new System.Drawing.Size(522, 23);
@@ -637,7 +667,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.textBoxDiscordStateText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDiscordStateText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDiscordStateText.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.textBoxDiscordStateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxDiscordStateText.Location = new System.Drawing.Point(11, 0);
             this.textBoxDiscordStateText.MaxLength = 128;
             this.textBoxDiscordStateText.Name = "textBoxDiscordStateText";
@@ -648,8 +678,8 @@ namespace VRChatHeartRateMonitor
             // labelDiscordStateText
             // 
             this.labelDiscordStateText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDiscordStateText.Font = new System.Drawing.Font("Cascadia Mono", 9F);
-            this.labelDiscordStateText.Location = new System.Drawing.Point(1, 124);
+            this.labelDiscordStateText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labelDiscordStateText.Location = new System.Drawing.Point(1, 123);
             this.labelDiscordStateText.Name = "labelDiscordStateText";
             this.labelDiscordStateText.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
             this.labelDiscordStateText.Size = new System.Drawing.Size(522, 25);
@@ -661,7 +691,7 @@ namespace VRChatHeartRateMonitor
             this.panelDiscordIdleText.BackColor = System.Drawing.Color.Transparent;
             this.panelDiscordIdleText.Controls.Add(this.textBoxDiscordIdleText);
             this.panelDiscordIdleText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDiscordIdleText.Location = new System.Drawing.Point(1, 101);
+            this.panelDiscordIdleText.Location = new System.Drawing.Point(1, 100);
             this.panelDiscordIdleText.Name = "panelDiscordIdleText";
             this.panelDiscordIdleText.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.panelDiscordIdleText.Size = new System.Drawing.Size(522, 23);
@@ -671,7 +701,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.textBoxDiscordIdleText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDiscordIdleText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDiscordIdleText.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.textBoxDiscordIdleText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxDiscordIdleText.Location = new System.Drawing.Point(11, 0);
             this.textBoxDiscordIdleText.MaxLength = 128;
             this.textBoxDiscordIdleText.Name = "textBoxDiscordIdleText";
@@ -682,8 +712,8 @@ namespace VRChatHeartRateMonitor
             // labelDiscordIdleText
             // 
             this.labelDiscordIdleText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDiscordIdleText.Font = new System.Drawing.Font("Cascadia Mono", 9F);
-            this.labelDiscordIdleText.Location = new System.Drawing.Point(1, 76);
+            this.labelDiscordIdleText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labelDiscordIdleText.Location = new System.Drawing.Point(1, 75);
             this.labelDiscordIdleText.Name = "labelDiscordIdleText";
             this.labelDiscordIdleText.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
             this.labelDiscordIdleText.Size = new System.Drawing.Size(522, 25);
@@ -695,7 +725,7 @@ namespace VRChatHeartRateMonitor
             this.panelDiscordActiveText.BackColor = System.Drawing.Color.Transparent;
             this.panelDiscordActiveText.Controls.Add(this.textBoxDiscordActiveText);
             this.panelDiscordActiveText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDiscordActiveText.Location = new System.Drawing.Point(1, 53);
+            this.panelDiscordActiveText.Location = new System.Drawing.Point(1, 52);
             this.panelDiscordActiveText.Name = "panelDiscordActiveText";
             this.panelDiscordActiveText.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
             this.panelDiscordActiveText.Size = new System.Drawing.Size(522, 23);
@@ -705,7 +735,7 @@ namespace VRChatHeartRateMonitor
             // 
             this.textBoxDiscordActiveText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDiscordActiveText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDiscordActiveText.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.textBoxDiscordActiveText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxDiscordActiveText.Location = new System.Drawing.Point(11, 0);
             this.textBoxDiscordActiveText.MaxLength = 128;
             this.textBoxDiscordActiveText.Name = "textBoxDiscordActiveText";
@@ -716,8 +746,8 @@ namespace VRChatHeartRateMonitor
             // labelDiscordActiveText
             // 
             this.labelDiscordActiveText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelDiscordActiveText.Font = new System.Drawing.Font("Cascadia Mono", 9F);
-            this.labelDiscordActiveText.Location = new System.Drawing.Point(1, 28);
+            this.labelDiscordActiveText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labelDiscordActiveText.Location = new System.Drawing.Point(1, 27);
             this.labelDiscordActiveText.Name = "labelDiscordActiveText";
             this.labelDiscordActiveText.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
             this.labelDiscordActiveText.Size = new System.Drawing.Size(522, 25);
@@ -728,11 +758,11 @@ namespace VRChatHeartRateMonitor
             // 
             this.checkBoxUseDiscord.AutoSize = true;
             this.checkBoxUseDiscord.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBoxUseDiscord.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.checkBoxUseDiscord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkBoxUseDiscord.Location = new System.Drawing.Point(1, 1);
             this.checkBoxUseDiscord.Name = "checkBoxUseDiscord";
             this.checkBoxUseDiscord.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
-            this.checkBoxUseDiscord.Size = new System.Drawing.Size(522, 27);
+            this.checkBoxUseDiscord.Size = new System.Drawing.Size(522, 26);
             this.checkBoxUseDiscord.TabIndex = 3;
             this.checkBoxUseDiscord.Text = "Discord Activity";
             this.checkBoxUseDiscord.UseVisualStyleBackColor = true;
@@ -767,7 +797,7 @@ namespace VRChatHeartRateMonitor
             // linkLabelInfoProjectUrl
             // 
             this.linkLabelInfoProjectUrl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabelInfoProjectUrl.Font = new System.Drawing.Font("Cascadia Mono", 9F);
+            this.linkLabelInfoProjectUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.linkLabelInfoProjectUrl.Location = new System.Drawing.Point(0, 65);
             this.linkLabelInfoProjectUrl.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.linkLabelInfoProjectUrl.Name = "linkLabelInfoProjectUrl";
@@ -782,7 +812,7 @@ namespace VRChatHeartRateMonitor
             // linkLabelInfoAuthorUrl
             // 
             this.linkLabelInfoAuthorUrl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabelInfoAuthorUrl.Font = new System.Drawing.Font("Cascadia Mono", 9F);
+            this.linkLabelInfoAuthorUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.linkLabelInfoAuthorUrl.Location = new System.Drawing.Point(0, 46);
             this.linkLabelInfoAuthorUrl.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.linkLabelInfoAuthorUrl.Name = "linkLabelInfoAuthorUrl";
@@ -797,7 +827,7 @@ namespace VRChatHeartRateMonitor
             // labelInfoAuthorName
             // 
             this.labelInfoAuthorName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelInfoAuthorName.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.labelInfoAuthorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelInfoAuthorName.Location = new System.Drawing.Point(0, 27);
             this.labelInfoAuthorName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelInfoAuthorName.Name = "labelInfoAuthorName";
@@ -809,7 +839,7 @@ namespace VRChatHeartRateMonitor
             // labelInfoAppName
             // 
             this.labelInfoAppName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelInfoAppName.Font = new System.Drawing.Font("Cascadia Mono", 15F);
+            this.labelInfoAppName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.labelInfoAppName.Location = new System.Drawing.Point(0, 0);
             this.labelInfoAppName.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.labelInfoAppName.Name = "labelInfoAppName";
@@ -872,56 +902,19 @@ namespace VRChatHeartRateMonitor
             this.linkLabelFooterWebsite.AutoSize = true;
             this.linkLabelFooterWebsite.BackColor = System.Drawing.Color.White;
             this.linkLabelFooterWebsite.Dock = System.Windows.Forms.DockStyle.Right;
-            this.linkLabelFooterWebsite.Font = new System.Drawing.Font("Cascadia Mono", 10F);
+            this.linkLabelFooterWebsite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.linkLabelFooterWebsite.LinkColor = System.Drawing.Color.Gray;
-            this.linkLabelFooterWebsite.Location = new System.Drawing.Point(300, 0);
+            this.linkLabelFooterWebsite.Location = new System.Drawing.Point(336, 0);
             this.linkLabelFooterWebsite.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.linkLabelFooterWebsite.Name = "linkLabelFooterWebsite";
             this.linkLabelFooterWebsite.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.linkLabelFooterWebsite.Size = new System.Drawing.Size(224, 26);
+            this.linkLabelFooterWebsite.Size = new System.Drawing.Size(188, 25);
             this.linkLabelFooterWebsite.TabIndex = 8;
             this.linkLabelFooterWebsite.TabStop = true;
             this.linkLabelFooterWebsite.Text = "Created by Richard Virgosky";
             this.linkLabelFooterWebsite.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.linkLabelFooterWebsite.VisitedLinkColor = System.Drawing.Color.DimGray;
             this.linkLabelFooterWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelFooterWebsite_LinkClicked);
-            // 
-            // labelWebServerHtml
-            // 
-            this.labelWebServerHtml.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelWebServerHtml.Font = new System.Drawing.Font("Cascadia Mono", 10F);
-            this.labelWebServerHtml.Location = new System.Drawing.Point(1, 52);
-            this.labelWebServerHtml.Name = "labelWebServerHtml";
-            this.labelWebServerHtml.Padding = new System.Windows.Forms.Padding(8, 3, 0, 0);
-            this.labelWebServerHtml.Size = new System.Drawing.Size(522, 25);
-            this.labelWebServerHtml.TabIndex = 12;
-            this.labelWebServerHtml.Text = "HTML/JS template:";
-            // 
-            // panelWebServerHtml
-            // 
-            this.panelWebServerHtml.BackColor = System.Drawing.Color.Transparent;
-            this.panelWebServerHtml.Controls.Add(this.textBoxWebServerHtml);
-            this.panelWebServerHtml.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelWebServerHtml.Location = new System.Drawing.Point(1, 77);
-            this.panelWebServerHtml.Name = "panelWebServerHtml";
-            this.panelWebServerHtml.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
-            this.panelWebServerHtml.Size = new System.Drawing.Size(522, 120);
-            this.panelWebServerHtml.TabIndex = 13;
-            // 
-            // textBoxWebServerHtml
-            // 
-            this.textBoxWebServerHtml.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxWebServerHtml.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxWebServerHtml.Font = new System.Drawing.Font("Cascadia Mono", 10F);
-            this.textBoxWebServerHtml.Location = new System.Drawing.Point(11, 0);
-            this.textBoxWebServerHtml.MaxLength = 16383;
-            this.textBoxWebServerHtml.Multiline = true;
-            this.textBoxWebServerHtml.Name = "textBoxWebServerHtml";
-            this.textBoxWebServerHtml.ReadOnly = true;
-            this.textBoxWebServerHtml.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxWebServerHtml.Size = new System.Drawing.Size(500, 120);
-            this.textBoxWebServerHtml.TabIndex = 8;
-            this.textBoxWebServerHtml.WordWrap = false;
             // 
             // MainForm
             // 
@@ -954,6 +947,8 @@ namespace VRChatHeartRateMonitor
             this.panelOsc.PerformLayout();
             this.tabWebServerSettings.ResumeLayout(false);
             this.tabWebServerSettings.PerformLayout();
+            this.panelWebServerHtml.ResumeLayout(false);
+            this.panelWebServerHtml.PerformLayout();
             this.panelWebServer.ResumeLayout(false);
             this.panelWebServer.PerformLayout();
             this.tabDiscordSettings.ResumeLayout(false);
@@ -971,8 +966,6 @@ namespace VRChatHeartRateMonitor
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFooterDiscord)).EndInit();
-            this.panelWebServerHtml.ResumeLayout(false);
-            this.panelWebServerHtml.PerformLayout();
             this.ResumeLayout(false);
 
         }
