@@ -57,10 +57,12 @@ namespace VRChatHeartRateMonitor
             InitializeDiscordHandler();
 
             // Initialize the new BLE switch button
-            buttonSwitchBLE = new Button();
-            buttonSwitchBLE.Location = new Point(200, 20); // Adjust the location as needed
-            buttonSwitchBLE.Size = new Size(150, 30); // Adjust the size as needed
-            buttonSwitchBLE.Text = "Switch to BLE";
+            buttonSwitchBLE = new Button
+            {
+                Location = new Point(200, 20), // Adjust the location as needed
+                Size = new Size(150, 30), // Adjust the size as needed
+                Text = "Switch to BLE"
+            };
             buttonSwitchBLE.Click += new EventHandler(buttonSwitchBLE_Click);
             this.Controls.Add(buttonSwitchBLE);
 
@@ -100,7 +102,7 @@ namespace VRChatHeartRateMonitor
             base.OnFormClosing(e);
         }
 
-        private void InitializeFont()
+    private void InitializeFont()
         {
             int fontLength = Properties.Resources.CascadiaMono.Length;
 
