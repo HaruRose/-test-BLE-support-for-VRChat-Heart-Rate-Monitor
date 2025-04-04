@@ -1,5 +1,3 @@
-﻿using System.Drawing;
-
 namespace VRChatHeartRateMonitor
 {
     partial class MainForm
@@ -8,6 +6,7 @@ namespace VRChatHeartRateMonitor
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button buttonSwitchBLE;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -145,6 +144,7 @@ namespace VRChatHeartRateMonitor
             this.tabMain.Controls.Add(this.buttonExecute);
             this.tabMain.Controls.Add(this.labelDevice);
             this.tabMain.Controls.Add(this.panelHeartRateDisplay);
+            this.tabMain.Controls.Add(this.buttonSwitchBLE); // Add the button to the tabMain controls.
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Margin = new System.Windows.Forms.Padding(1);
             this.tabMain.Name = "tabMain";
@@ -152,6 +152,14 @@ namespace VRChatHeartRateMonitor
             this.tabMain.Size = new System.Drawing.Size(524, 278);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Main";
+            // 
+            // buttonSwitchBLE
+            // 
+            this.buttonSwitchBLE.Location = new System.Drawing.Point(200, 20); // Adjust the location as needed
+            this.buttonSwitchBLE.Size = new System.Drawing.Size(150, 30); // Adjust the size as needed
+            this.buttonSwitchBLE.Text = "Switch to BLE";
+            this.buttonSwitchBLE.UseVisualStyleBackColor = true;
+            this.buttonSwitchBLE.Click += new System.EventHandler(this.buttonSwitchBLE_Click);
             // 
             // labelDeviceInfo
             // 
