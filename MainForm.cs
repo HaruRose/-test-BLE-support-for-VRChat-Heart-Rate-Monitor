@@ -87,7 +87,6 @@ namespace VRChatHeartRateMonitor
             // Re-initialize the device handler based on the selected mode
             InitializeDeviceHandler();
         }
-        private CheckBox checkBoxSwitchBLE;
         private void SafeInvoke(Action action)
         {
             if (InvokeRequired)
@@ -116,7 +115,7 @@ namespace VRChatHeartRateMonitor
             _deviceHandler.StartBLE();
         }
 
-        private void OnHeartRateUpdated(int heartRate)
+        private void OnHeartRateUpdated(ushort heartRate)
         {
             // Handle the heart rate update (e.g., update the UI or log the value)
             Console.WriteLine($"Heart Rate: {heartRate}");
