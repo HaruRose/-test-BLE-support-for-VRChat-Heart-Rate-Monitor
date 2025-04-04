@@ -704,5 +704,28 @@ namespace VRChatHeartRateMonitor
         {
             Process.Start(new ProcessStartInfo("https://github.com/RichardVirgosky/VRChat-Heart-Rate-Monitor") { UseShellExecute = true });
         }
+        private Button buttonSwitchBLE;
+        public MainForm()
+{
+    InitializeComponent();
+    InitializeFont();
+    InitializeConfig();
+    InitializeIcons();
+    InitializeForm();
+    InitializeUpdate();
+    InitializeHeartbeatEffect();
+    InitializeDeviceHandler();
+    InitializeVRChatOscHandler();
+    InitializeWebServerHandler();
+    InitializeDiscordHandler();
+
+    // Initialize the new BLE switch button
+    buttonSwitchBLE = new Button();
+    buttonSwitchBLE.Location = new Point(200, 20); // Adjust the location as needed
+    buttonSwitchBLE.Size = new Size(150, 30); // Adjust the size as needed
+    buttonSwitchBLE.Text = "Switch to BLE";
+    buttonSwitchBLE.Click += new EventHandler(buttonSwitchBLE_Click);
+    this.Controls.Add(buttonSwitchBLE);
+}
     }
 }
