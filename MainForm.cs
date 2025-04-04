@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Net;
+using BleHandler;
 
 namespace VRChatHeartRateMonitor
 {
