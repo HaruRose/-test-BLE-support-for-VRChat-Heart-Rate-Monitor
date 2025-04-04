@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -16,41 +16,31 @@ namespace VRChatHeartRateMonitor
     public partial class MainForm : Form
     {
         private PrivateFontCollection _privateFonts = new PrivateFontCollection();
-
         private UpdateHandler _updateHandler;
-
         private System.Windows.Forms.Timer _heartbeatEffectTimer;
         private DeviceHandler _deviceHandler;
         private Dictionary<ulong, string> _deviceMap = new Dictionary<ulong, string>();
-
         private BleHandler bleHandler;
-
         private CancellationTokenSource _autoConnectCountdownCancellationToken;
-
         private VRChatOscHandler _vrchatOscHandler;
         private WebServerHandler _webServerHandler;
         private DiscordHandler _discordHandler;
-
         private List<Icon> _icons = new List<Icon>();
-
         private string _lastConnectedDeviceAddress = "";
-
         private string _oscAddress = "127.0.0.1:9000";
-
         private bool _useChatbox = true;
         private ushort _chatboxAppearance = 0;
-
         private bool _useAvatar = false;
         private string _avatarParameter = "heartRate";
-
         private bool _useWebServer = false;
         private ushort _webServerPort = 6969;
-        private string _webServerHtml = "<!-- Use own HTML/JS \"{0}\" will be replaced with HR value -->\r\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewBox=\"0 0 24 24\" style=\"position: relative;\">\r\n<path d=\"M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z\" fill=\"red\"/>\r\n<text x=\"50%\" y=\"47%\" font-size=\"10\" text-anchor=\"middle\" alignment-baseline=\"middle\" fill=\"white\" font-weight=\"bold\" font-family=\"monospace\">{0}</text>\r\n</svg>";
-
+        private string _webServerHtml = "<!-- Use own HTML/JS \"{0}\" will be replaced with HR value -->\r\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewBox=\"0 0 24 [...]";
         private bool _useDiscord = true;
         private string _discordActiveText = "Using my VRC Heart Rate Monitor!";
         private string _discordIdleText = "Ideling with my VRC Heart Rate Monitor!";
         private string _discordStateText = "{0} BPM";
+        private bool isScanning = false;
+        private Button buttonSwitchBLE;
 
         public MainForm()
         {
@@ -65,19 +55,7 @@ namespace VRChatHeartRateMonitor
             InitializeVRChatOscHandler();
             InitializeWebServerHandler();
             InitializeDiscordHandler();
-        }
 
-        private void SafeInvoke(Action action)
-        {
-            if (InvokeRequired)
-                try
-                {
-                    Invoke(action);
-                }
-                catch (ObjectDisposedException){}
-            else
-                action();
-        }
             // Initialize the new BLE switch button
             buttonSwitchBLE = new Button();
             buttonSwitchBLE.Location = new Point(200, 20); // Adjust the location as needed
@@ -121,8 +99,6 @@ namespace VRChatHeartRateMonitor
             bleHandler.Disconnect();
             base.OnFormClosing(e);
         }
-    }
-}
 
         private void InitializeFont()
         {
