@@ -23,6 +23,8 @@ namespace VRChatHeartRateMonitor
         private DeviceHandler _deviceHandler;
         private Dictionary<ulong, string> _deviceMap = new Dictionary<ulong, string>();
 
+        private BleHandler bleHandler;
+
         private CancellationTokenSource _autoConnectCountdownCancellationToken;
 
         private VRChatOscHandler _vrchatOscHandler;
@@ -76,6 +78,65 @@ namespace VRChatHeartRateMonitor
             else
                 action();
         }
+                public MainForm()
+        {
+            InitializeComponent();
+            InitializeFont();
+            InitializeConfig();
+            InitializeIcons();
+            InitializeForm();
+            InitializeUpdate();
+            InitializeHeartbeatEffect();
+            InitializeDeviceHandler();
+            InitializeVRChatOscHandler();
+            InitializeWebServerHandler();
+            InitializeDiscordHandler();
+
+            // Initialize the new BLE switch button
+            buttonSwitchBLE = new Button();
+            buttonSwitchBLE.Location = new Point(200, 20); // Adjust the location as needed
+            buttonSwitchBLE.Size = new Size(150, 30); // Adjust the size as needed
+            buttonSwitchBLE.Text = "Switch to BLE";
+            buttonSwitchBLE.Click += new EventHandler(buttonSwitchBLE_Click);
+            this.Controls.Add(buttonSwitchBLE);
+
+            // Initialize BleHandler
+            bleHandler = new BleHandler();
+            bleHandler.HeartRateUpdated += OnHeartRateUpdated;
+        }
+
+        private void buttonSwitchBLE_Click(object sender, EventArgs e)
+        {
+            if (isScanning)
+            {
+                // Stop BLE scanning
+                bleHandler.StopScanning();
+                buttonSwitchBLE.Text = "Switch to BLE";
+                isScanning = false;
+            }
+            else
+            {
+                // Start BLE scanning
+                bleHandler.StartScanning();
+                buttonSwitchBLE.Text = "Stop BLE";
+                isScanning = true;
+            }
+        }
+
+        private void OnHeartRateUpdated(int heartRate)
+        {
+            // Handle the heart rate update (e.g., update the UI or log the value)
+            Console.WriteLine($"Heart Rate: {heartRate}");
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            // Ensure BLE resources are cleaned up
+            bleHandler.Disconnect();
+            base.OnFormClosing(e);
+        }
+    }
+}
 
         private void InitializeFont()
         {
@@ -704,28 +765,5 @@ namespace VRChatHeartRateMonitor
         {
             Process.Start(new ProcessStartInfo("https://github.com/RichardVirgosky/VRChat-Heart-Rate-Monitor") { UseShellExecute = true });
         }
-        private Button buttonSwitchBLE;
-        public MainForm()
-{
-    InitializeComponent();
-    InitializeFont();
-    InitializeConfig();
-    InitializeIcons();
-    InitializeForm();
-    InitializeUpdate();
-    InitializeHeartbeatEffect();
-    InitializeDeviceHandler();
-    InitializeVRChatOscHandler();
-    InitializeWebServerHandler();
-    InitializeDiscordHandler();
-
-    // Initialize the new BLE switch button
-    buttonSwitchBLE = new Button();
-    buttonSwitchBLE.Location = new Point(200, 20); // Adjust the location as needed
-    buttonSwitchBLE.Size = new Size(150, 30); // Adjust the size as needed
-    buttonSwitchBLE.Text = "Switch to BLE";
-    buttonSwitchBLE.Click += new EventHandler(buttonSwitchBLE_Click);
-    this.Controls.Add(buttonSwitchBLE);
-}
     }
 }
