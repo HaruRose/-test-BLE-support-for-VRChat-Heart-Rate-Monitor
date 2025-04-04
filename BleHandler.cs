@@ -51,6 +51,11 @@ namespace VRChatHeartRateMonitor
             bleWatcher.Stop();
         }
 
+        public void StartBLE()
+        {
+            StartScanning();
+        }
+
         public void SubscribeToDevice(ulong bluetoothDeviceAddress)
         {
             // Implement this method based on your requirements.
